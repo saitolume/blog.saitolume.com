@@ -40,7 +40,7 @@ description: 留年休学大学生を 1 年間やってみた
 
 4 月くらいから [447 Records](https://twitter.com/447Records) という音楽事務所にエンジニアとして参加しています。具体的には、ホームページや YouTube で 24 時間 365 日配信をしている「[447 Music Radio](https://www.youtube.com/watch?v=FHghknh7JgA)」の裏側などを作ってきました。僕が好きな音楽や VTuber という領域に僕が好きなプログラミングで貢献できているのが嬉しいです。特に印象的なのはクラウドファンディングのコメント欄で、大勢のファンの方々に支えられていることを日々実感しています。僕ができることはプログラムを書くくらいですが、他のクリエイターの皆さんの魅力を発信できるように今後も頑張ります。
 
-<iframe width="700" height="394" src="https://www.youtube.com/embed/FHghknh7JgA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe title="447 Music Radio - for virtual fans" width="700" height="394" src="https://www.youtube.com/embed/FHghknh7JgA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## 楽しかった思い出
 
@@ -166,5 +166,3 @@ description: 留年休学大学生を 1 年間やってみた
 ## おわりに
 
 この記事に書いていないことで悩んだこともありましたが、それ以上に楽しいことがたくさんあって充実した 1 年でした。これまでの人生の中で一番多くの人に支えられていた年だという自覚があるので、皆さんには感謝でいっぱいです。2021 年もよろしくお願いします。
-
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
