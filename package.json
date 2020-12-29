@@ -1,0 +1,41 @@
+{
+  "name": "blog.saitolume.com",
+  "private": true,
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "author": "Tadao Iseki <saitoelu3@gmail.com>",
+  "scripts": {
+    "dev": "next",
+    "build": "next build && next export"
+  },
+  "dependencies": {
+    "@linaria/babel-preset": "^3.0.0-beta.1",
+    "@linaria/core": "^3.0.0-beta.1",
+    "@linaria/react": "^3.0.0-beta.1",
+    "@linaria/shaker": "^3.0.0-beta.1",
+    "markdown-it": "^12.0.4",
+    "markdown-it-anchor": "^6.0.1",
+    "markdown-it-front-matter": "^0.2.3",
+    "markdown-it-link-attributes": "^3.0.0",
+    "next": "^10.0.4",
+    "preact": "^10.5.7",
+    "preact-render-to-string": "^5.1.12",
+    "react": "npm:@preact/compat",
+    "react-dom": "npm:@preact/compat",
+    "reading-time": "^1.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-react": "^7.12.10",
+    "@linaria/webpack-loader": "^3.0.0-beta.1",
+    "@types/markdown-it": "^12.0.0",
+    "@types/markdown-it-anchor": "^4.0.4",
+    "@types/markdown-it-link-attributes": "^3.0.0",
+    "@types/node": "^14.14.16",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@zeit/next-css": "^1.0.1",
+    "next-plugin-preact": "^3.0.3",
+    "typescript": "^4.1.3"
+  }
+}
