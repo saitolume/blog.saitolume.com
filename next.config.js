@@ -3,6 +3,9 @@ const withPreact = require('next-plugin-preact');
 const path = require('path')
 
 module.exports = withCSS(withPreact({
+  experimental: {
+    optimizeFonts: true,
+  },
   webpack(config) {
     config.resolve.alias['~'] = path.resolve('src')
     config.module.rules.push({

@@ -11,6 +11,7 @@ const Page: NextPage<Props> = (props) => (
   <Template
     description={props.post.description}
     post={props.post}
+    slug={props.post.slug}
     title={props.post.title}
   />
 )

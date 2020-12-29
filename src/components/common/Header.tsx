@@ -1,23 +1,29 @@
 import { css } from '@linaria/core'
-import Image from 'next/image'
 import Link from 'next/link'
 import { VFC } from 'react'
+import { colors } from '~/utils/theme'
 
 const Header: VFC = () => (
   <header className={container}>
     <h1 className={title}>
       <Link href="/">Overotakuted</Link>
     </h1>
-    <div className={flexbox}>
-      <small className={author}>by saitolume</small>
-      <Image
-        className={photo}
-        src="/profile.jpg"
-        width={40}
-        height={40}
-        alt="saitolume"
-      />
-    </div>
+    <a
+      href="https://twitter.com/saitolume"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div className={flexbox}>
+        <small className={author}>by saitolume</small>
+        <img
+          className={photo}
+          src="/profile.webp"
+          width={40}
+          height={40}
+          alt="saitolume"
+        />
+      </div>
+    </a>
   </header>
 )
 
@@ -36,6 +42,7 @@ const title = css`
 const flexbox = css`
   align-items: center;
   display: flex;
+  color: ${colors.text1};
 `
 
 const author = css`

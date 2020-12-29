@@ -1,4 +1,4 @@
-import { readdir, readFile } from 'fs/promises'
+import { promises as fs } from 'fs'
 import markdownIt from 'markdown-it'
 import markdownItAnchor from 'markdown-it-anchor'
 import markdownItFrontMatter from 'markdown-it-front-matter'
@@ -9,17 +9,19 @@ import { Post } from '~/utils/types'
 
 export async function getAllPostSlugs(): Promise<string[]> {
   const dirpath = resolve(`posts`)
-  const result = await readdir(dirpath)
+  const result = await fs.readdir(dirpath)
 
   return result
 }
 
 export async function parseMarkDown(slug: string): Promise<Post> {
   const filepath = resolve(`posts/${slug}/index.md`)
-  const content = await readFile(filepath, 'utf-8')
+  const content = await fs.readFile(filepath, 'utf-8')
   let frontMatter: Record<string, string> = {}
 
-  const md = markdownIt()
+  const md = markdownIt({
+    html: true,
+  })
     .use(markdownItFrontMatter, (fm) => {
       const entries = fm.split('\n').map((value) => value.split(': '))
       frontMatter = Object.fromEntries(entries)
