@@ -32,10 +32,13 @@ const container = css`
   display: flex;
   justify-content: space-between;
   margin: 40px 0 64px 0;
+
+  @media (max-width: 480px) {
+    margin: 16px 0 40px 0;
+  }
 `
 
 const title = css`
-  font-weight: 900;
   margin: 0;
 `
 
@@ -47,6 +50,10 @@ const flexbox = css`
 
 const author = css`
   margin-right: 8px;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `
 
 const photo = css`

@@ -20,6 +20,14 @@ body {
   flex-direction: column;
 }
 
+@media (max-width: 480px) {
+  #__next {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+}
+
 a {
   color: #d23669;
   text-decoration: none;
@@ -30,5 +38,5 @@ small {
 }
 
 * {
-  line-height: 1.75rem;
+  line-height: 2rem;
 }

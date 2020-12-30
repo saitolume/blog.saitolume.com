@@ -34,6 +34,7 @@ const Template: VFC<TemplateProps> = (props) => (
 
 const title = css`
   color: ${colors.primary};
+  line-height: 40px;
   margin: 0 0 12px 0;
 `
 

@@ -11,7 +11,7 @@ const Layout: FC = ({ children }) => (
 )
 
 const container = css`
-  width: 700px;
+  width: 100%;
   margin-bottom: 64px;
 `
 

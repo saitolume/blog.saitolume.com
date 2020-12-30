@@ -48,6 +48,10 @@ const list = css`
   width: 30%;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 480px) {
+    width: 70%;
+  }
 `
 
 export default SocialShare
