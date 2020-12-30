@@ -34,7 +34,7 @@ const container = css`
   margin: 40px 0 64px 0;
 
   @media (max-width: 480px) {
-    margin: 16px 0 40px 0;
+    margin: 40px 0;
   }
 `
 
