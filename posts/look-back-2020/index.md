@@ -45,7 +45,6 @@ description: 留年休学大学生を 1 年間やってみた
 [1 月 17 日を目安に新しいプロダクトを出す予定](https://447pro.com/news/2lecKm45rlUpYDdbS16RE5)なのでお楽しみに。
 
 <iframe id="radio" title="447 Music Radio - for virtual fans" width="700" height="394" src="https://www.youtube.com/embed/FHghknh7JgA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 <style>
 @media (max-width: 480px) {
   #radio {
@@ -122,6 +121,16 @@ description: 留年休学大学生を 1 年間やってみた
 2020 年はこれまで以上に好きな曲にたくさん出会うことができて音楽がもっと好きになりました。
 
 来年リリースされる曲だと電音部の In my world (Prod. KOTONOHOUSE) が楽しみです。既に頭がおかしくなるくらい試聴動画を再生しました。
+
+<iframe  id="kotonoha" title="【1/20CD発売】＃電音部 -帝音国際学院-『In my world (Prod. KOTONOHOUSE)』試聴動画" width="700" height="394" src="https://www.youtube.com/embed/vLubpeIbv_A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<style>
+@media (max-width: 480px) {
+  #kotonoha {
+    width: 100%;
+    height: 180px;
+  }
+}
+</style>
 
 ## 本
 
