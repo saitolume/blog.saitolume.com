@@ -20,17 +20,24 @@ const PostCard: VFC<Props> = (props) => (
       </h2>
       <PostMeta date={props.date} readingTime={props.readingTime} />
     </header>
-    <p dangerouslySetInnerHTML={{ __html: props.description }} />
+    <p
+      className={description}
+      dangerouslySetInnerHTML={{ __html: props.description }}
+    />
   </article>
 )
 
 const container = css`
-  margin-bottom: 64px;
+  margin-bottom: 40px;
 `
 
 const title = css`
   font-weight: bold;
   line-height: 40px;
+  margin: 0;
+`
+
+const description = css`
   margin: 0;
 `
 
