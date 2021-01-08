@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 import { GetStaticProps, NextPage } from 'next'
 import Template from '~/components/templates/index'
 import { getAllPostSlugs, parseMarkDown } from '~/utils/helper'
@@ -17,7 +18,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   return {
     props: {
-      posts,
+      posts: posts.sort((a, b) => dayjs(a.date).unix() - dayjs(b.date).unix()),
     },
   }
 }
