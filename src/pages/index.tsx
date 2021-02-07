@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   return {
     props: {
-      posts: posts.sort((a, b) => dayjs(a.date).unix() - dayjs(b.date).unix()),
+      posts: posts.sort((a, b) => dayjs(b.date).unix() - dayjs(a.date).unix()),
     },
   }
 }
