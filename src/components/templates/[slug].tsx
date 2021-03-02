@@ -7,6 +7,7 @@ import PostMeta from '~/components/common/PostMeta'
 import SocialShare from '~/components/common/SocialShare'
 import { colors } from '~/utils/theme'
 import { Post } from '~/utils/types'
+import 'highlight.js/styles/ocean.css'
 
 export type TemplateProps = Required<HeadProps> & {
   post: Post
@@ -40,6 +41,10 @@ const title = css`
 
 const body = css`
   margin: 40px 0 64px 0;
+
+  code {
+    border-radius: 4px;
+  }
 `
 
 export default Template
