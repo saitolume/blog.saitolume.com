@@ -8,7 +8,7 @@ description: テイエムオペラオー 1 人に 70 連分の石を持ってい
 
 数年前にグラブルで痛い目にあっているので<b>「もうサイゲには騙されない！」</b>と思っていましたが、また騙されてドハマリしています。あまりにも楽しくてフレンド募集掲示板を作ってしまいました。
 
-[umamusume-trainers.vercel.app](https://umamusume-trainers.vercel.app) からアクセスすることができます。
+[umamusume.club](https://umamusume.club) からアクセスすることができます。
 
 ## 背景
 
@@ -67,4 +67,4 @@ description: テイエムオペラオー 1 人に 70 連分の石を持ってい
 
 ゲームの内容には言及しませんでしたが、「ウマ娘 プリティーダービー」は近年の育成ゲームの中で一番と言っても良いほど完成度が高いゲームです。時間があり余っている人は全員遊んでください。
 
-そして今回作ったフレンド掲示板 ([umamusume-trainers.vercel.app](https://umamusume-trainers.vercel.app))をたくさん使ってください！！
+そして今回作ったフレンド掲示板 ([umamusume.club](https://umamusume.lub))をたくさん使ってください！！
