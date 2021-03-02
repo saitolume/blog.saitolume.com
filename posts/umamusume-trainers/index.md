@@ -61,7 +61,7 @@ description: テイエムオペラオー 1 人に 70 連分の石を持ってい
 
 注目して欲しいのは [React Hook Form](https://react-hook-form.com/jp/) という React 用のフォームライブラリです。再レンダリングが少なかったり、バリデーションやエラーを扱いやすかったりと多くのメリットがあって、最近個人的に推しています。自前でバリデーションやステートを管理していた時代には戻れなくなるくらい良いです。
 
-ソースコードは [GitHub](https://github.com/saitolume/umamusume-trainers) に公開しています。
+ソースコードは [GitHub](https://github.com/saitolume/umamusume.club) に公開しています。
 
 ## おわりに
 
