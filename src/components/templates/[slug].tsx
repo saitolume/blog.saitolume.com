@@ -42,8 +42,12 @@ const title = css`
 const body = css`
   margin: 40px 0 64px 0;
 
-  code {
+  code:not(.hljs) {
     border-radius: 4px;
+    background-color: #2b303b;
+    background-color: #e5e5e5;
+    /* color: #c0c5ce; */
+    padding: 4px;
   }
 `
 
