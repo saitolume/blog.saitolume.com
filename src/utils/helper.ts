@@ -35,7 +35,6 @@ export async function parseMarkDown(slug: string): Promise<Post> {
     .use(markdownItAnchor, {
       permalink: false, // TODO
     })
-    .use(require('markdown-it-highlightjs'))
 
   const body = md.render(content)
   const { text } = readingTime(body)
