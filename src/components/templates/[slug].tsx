@@ -44,9 +44,9 @@ const body = css`
 
   code:not(.hljs) {
     border-radius: 4px;
-    background-color: #2b303b;
-    background-color: #e5e5e5;
-    /* color: #c0c5ce; */
+    /* background-color: #e5e5e5; */
+    background-color: rgba(135, 131, 120, 0.15);
+    color: #d23669;
     padding: 4px;
   }
 `
