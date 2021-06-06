@@ -4,31 +4,21 @@ date: 2021/6/6
 description: Ignored Build Step を使えば任意の条件でデプロイを中断できて便利
 ---
 
-## 結論
-
-Vercel の対象プロジェクトの `Settings > Git > Ignored Build Step` に次のコマンドを入力する。
-
-```
-git diff --exit-code --quiet @{0}..main{0} -- blob
-```
-
-`blob` は対象のパッケージへのパスに置き換えてください。
-
 ## 背景
 
 Vercel には単一の Git リポジトリから複数のプロジェクトを作る機能があります。
 
 [Monorepos – Vercel](https://vercel.com/blog/monorepos)
 
-この機能を利用すれば、monorepo (モノレポ、モノリポ) でも PR 作成時に自動的にプレビュー環境を生成することができます。
+この機能を利用すれば、monorepo (モノレポ、モノリポ) でも Pull Request 作成時に自動的にプレビュー環境を生成することができます。
 
-しかし、1 つのパッケージしか変更していない PR でも、同じリポジトリに対応している全てのプロジェクトのプレビュー環境を生成するという問題点があります。
+しかし、**1 つのパッケージしか変更していない Pull Request でも、同じリポジトリに対応している全てのプロジェクトのプレビュー環境を生成する**という問題があります。
 
 無料枠で Vercel を使用している場合は、複数のデプロイを同時に実行することができないため、開発速度の低下に繋がります。今回はこの問題を解決します。
 
 ## 方法
 
-Vercel の `Ignore Build Step` で、対象のパッケージに変更がない場合はビルドをスキップします。
+Vercel の **Ignore Build Step** で、対象のパッケージに変更がない場合はビルドをスキップします。
 
 [Projects - Vercel Documentation](https://vercel.com/docs/platform/projects#ignored-build-step)
 
@@ -40,29 +30,42 @@ Vercel の `Ignore Build Step` で、対象のパッケージに変更がない�
 
 ## やること
 
-対象プロジェクトの `Settings > Git > Ignored Build Step` を開きます。
+### 1. 変更を検知するシェルスクリプトを作成
+
+```bash
+#!/bin/bash
+
+if [[ "$VERCEL_ENV" != "preview" ]]; then
+    exit 1;
+fi
+
+GLOB=${@}
+PREV_MERGE_COMMIT=`git rev-list --grep "Merge pull request" -n 1 HEAD`
+
+eval "git diff --quiet $PREV_MERGE_COMMIT HEAD -- $GLOB"
+```
+
+`git rev-list` によるコミットログの検索によって前回の merge commit を取得して、そこから最新状態までの差分を確認するスクリプトです。
+本番環境にデプロイするときはビルドを実行したいので、プレビュー環境のときだけスクリプトを実行します。
+
+`--quit` オプションを有効にすることで、すべての出力を表示せず、差分が存在するときは exit code を `1` にして終了することができます。
+
+### 2. Ignored Build Step にシェルスクリプトを設定
+
+対象プロジェクトの **Settings > Git > Ignored Build Step** を開きます。
 
 <img width="100%" src="https://storage.googleapis.com/zenn-user-upload/3c2acbab22aee94f93e44a14.png" alt="Ignored Build Step" />
 
-今回は、`COMMAND` に次のコマンドを入力することで、指定したパッケージが main ブランチの状態から変更されているときだけ exit code を `1` にします。
+COMMAND にスクリプトを実行するコマンドを入力することで、`glob` で指定したパスのパッケージが前回の merge commit から変更されていないときはビルドをスキップすることができます。
 
+```bash
+bash ../../scripts/check_ignore_build_step.sh glob
 ```
-git diff --exit-code --quiet @{0}..main{0} -- blob
-```
 
-### コマンド解説
+対象のパッケージが依存しているパッケージの変更も検知したいときは、`glob` を `. ../{deps1, deps2}` のように書くことで対応できます。
 
-- `--exit-code` オプション: 差分が存在するときに exit code を `1` にして終了するオプション
-- `--quit` オプション: すべての出力を表示しないオプション
-- `@{0}`: 最新の変更の参照 ([公式ドキュメント](https://www.git-scm.com/docs/gitrevisions#Documentation/gitrevisions.txt-emltngtemegem1em))
-- `main{0}`:メインブランチの最新の変更の参照 ([公式ドキュメント](https://www.git-scm.com/docs/gitrevisions#Documentation/gitrevisions.txt-emltrefnamegtltngtemegemmaster1em))
-- `--`: 以降はファイルパスであることを示す
-- `blob`: 対象のパッケージへのパス
+### 3. デプロイを実行
 
-対象のパッケージが依存しているパッケージの変更も検知したいときは、blob を `packages/{main,deps}` のように書くことで対応できます。
+デプロイ実行後のコンソールに **"The Deployment has been canceled as a result of running the command defined in the "Ignored Build Step" setting."** というメッセージが表示されていたら成功です。
 
-### 結果
-
-Status が `Canceled` と表示されていたら成功です。
-
-<img width="100%" src="https://storage.googleapis.com/zenn-user-upload/7ad457b9aca2a2b7c80de0de.png" alt="Vercel のデプロイ Overview" />
+<img width="100%" src="https://i.gyazo.com/06f2e5b62ac45c939cdf72616a2826dd.png" alt="Vercel のデプロイ Overview" />
