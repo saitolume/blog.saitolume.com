@@ -69,3 +69,11 @@ bash ../../scripts/check_ignore_build_step.sh glob
 デプロイ実行後のコンソールに **"The Deployment has been canceled as a result of running the command defined in the "Ignored Build Step" setting."** というメッセージが表示されていたら成功です。
 
 <img width="100%" src="https://i.gyazo.com/06f2e5b62ac45c939cdf72616a2826dd.png" alt="Vercel のデプロイ Overview" />
+
+## おまけ
+
+なぜ main ブランチとの比較をしないのかという指摘を受けそうなので補足しておきます。
+
+理由は、ビルドを実行する環境では、なぜかブランチが強制的に master になる上に、他のブランへの参照が失われているからです。
+
+<img width="100%" src="https://i.gyazo.com/c2ca172695d5aa9051233143d8e1498a.png" alt="master ブランチしか表示されていない git branch の結果" />
