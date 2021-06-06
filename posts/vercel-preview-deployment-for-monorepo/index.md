@@ -6,7 +6,7 @@ description: Ignored Build Step を使えば任意の条件でデプロイを中
 
 ## 結論
 
-Vercel の対象プロジェクトの `Settings > Git > Ignored Build Step` に次のコードを入力する。
+Vercel の対象プロジェクトの `Settings > Git > Ignored Build Step` に次のコマンドを入力する。
 
 ```
 git diff --exit-code --quiet @{0}..main{0} -- blob
